@@ -1,0 +1,62 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SQLiteWp8.Views.ReadContactList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Read All contacts with listbox" Margin="9,-7,0,0" FontSize="28"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="0">
+                <Button Height="80" Content="Add Contact" Width="200" Click="AddContact_Click"/>
+                <Button Height="80" Width="200" Content="DeleteAll" Click="DeleteAll_Click"/>
+            </StackPanel>
+            <ListBox BorderBrush="#FF141EE4" Height="auto" BorderThickness="2" MaxHeight="580" Grid.Row="1" x:Name="listBoxobj" SelectionChanged="listBoxobj_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Background="Gray" Width="480">
+                            <Border BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                  </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" x:Name="NameTxt" TextWrapping="Wrap" Text="{Binding Name}" FontSize="28" Foreground="White"/>
+                                    <TextBlock Grid.Row="1" x:Name="PhoneTxt"  TextWrapping="Wrap" Text="{Binding PhoneNumber}" />
+                                    <TextBlock Grid.Row="0" Text=">" FontSize="28" Margin="0,0,35,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,35,0" Grid.Row="3" x:Name="CreateddateTxt"  TextWrapping="Wrap" Text="{Binding CreationDate}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+           
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

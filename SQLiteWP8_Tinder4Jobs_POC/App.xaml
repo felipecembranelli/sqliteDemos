@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="SQLiteWP8_Tinder4Jobs_POC.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SQLiteWP8_Tinder4Jobs_POC">
+
+</Application>
