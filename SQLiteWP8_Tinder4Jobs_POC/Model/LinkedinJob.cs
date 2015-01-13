@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLiteWP8_Tinder4Jobs_POC.Model
 {
-    public class LinkedinJob
+    public class LinkedinJobComplex
     {
         public LinkedinCompany Company { get; set; }
 
@@ -42,7 +42,7 @@ namespace SQLiteWP8_Tinder4Jobs_POC.Model
     {
         public string Total { get; set; }
 
-        public LinkedinJob[] Values { get; set; }
+        public LinkedinJobComplex[] Values { get; set; }
 
     }
 
